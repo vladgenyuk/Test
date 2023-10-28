@@ -22,12 +22,10 @@ from django.views.generic import TemplateView
 from .yasg import urlpatterns as doc_urls
 from . import views
 
-
-handler404 = views.handler404
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('core/', include('apps.core.urls')),
+    path('oauth/', views.oauth)
 ]
 
 social_patterns = [

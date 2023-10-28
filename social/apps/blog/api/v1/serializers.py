@@ -17,12 +17,12 @@ class PublicationSerializer(ModelSerializer):
         fields = ['id', 'title', 'content', 'publisher']
 
     def create(self, validated_data):
-        user = get_object_or_404(UserAccount, email=validated_data.get('publisher').get('email'))
+        # user = get_object_or_404(UserAccount, email=validated_data.get('publisher').get('email'))
         publication = Publication.objects.create(
             title=validated_data.get('title'),
             content=validated_data.get('content'),
             published_at=timezone.now(),
-            publisher=user
+            publisher_id=3
         )
         publication.save()
         return publication

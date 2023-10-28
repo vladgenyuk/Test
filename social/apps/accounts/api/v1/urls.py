@@ -10,7 +10,6 @@ router = DefaultRouter()
 
 urlpatterns = [
     path('', v1, name='v1'),
-    path('user/test', UserApiView.as_view(), name='test')
 ]
 
 urlpatterns += router.urls

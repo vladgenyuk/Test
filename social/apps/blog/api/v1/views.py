@@ -13,10 +13,6 @@ class PublicationViewSet(ModelViewSet):
     permission_classes = []
     serializer_class = PublicationSerializer
 
-    def list(self, request):
-        serializer = self.serializer_class(self.queryset, many=True)
-        return Response(serializer.data)
-
     def retrieve(self, request, pk=None):
         publication = get_object_or_404(self.queryset, pk=pk)
         serializer = self.serializer_class(publication)
@@ -29,3 +25,5 @@ class PublicationViewSet(ModelViewSet):
             return Response({'info': 'Publication created',
                              'details': serializer.data}, status=201)
         return Response(serializer.errors)
+
+    # def update(self):
