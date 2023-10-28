@@ -14,4 +14,4 @@ copy . .
 
 workdir social
 
-cmd gunicorn --bind 0.0.0.0:8000 social.wsgi:application
+cmd gunicorn social.wsgi:application --log-file -
