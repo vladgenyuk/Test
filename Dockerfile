@@ -14,4 +14,4 @@ copy . .
 
 workdir social
 
-cmd python manage.py runserver
+cmd gunicorn --bind 0.0.0.0:8000 social.wsgi
