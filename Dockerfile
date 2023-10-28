@@ -14,4 +14,4 @@ copy . .
 
 workdir social
 
-cmd gunicorn --bind 0.0.0.0:8000 social.wsgi --workers 1 --worker-class uvicorn.workers.UvicornWorker
+cmd gunicorn --bind 0.0.0.0:8000 social.social.wsgi
