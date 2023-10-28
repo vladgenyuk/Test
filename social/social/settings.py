@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-v%u1^i@^%0x(r&3e5o06&elul68jtihaverkw2$ucuoa7_dh-n
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'iatsun.onrender.com']
+ALLOWED_HOSTS = ['127.0.0.1', '*', 'iatsun.onrender.com']
 
 # Application definition
 
@@ -137,7 +137,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT = os.path.join(BASE_DIR)
 
 REST_FRAMEWORK = {
     # 'DEFAULT_AUTHENTICATION_CLASSES': (
